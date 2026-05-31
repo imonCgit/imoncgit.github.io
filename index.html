@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ontwerp Consulting & Co. Enterprise architecture, digital transformation, and programme governance for public sector and regulated industries.">
+<title>Ontwerp Consulting &amp; Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #111111;
+    --dark: #2c2c2c;
+    --mid: #5a5a5a;
+    --light: #8a8a8a;
+    --hairline: #ececec;
+    --border: #e0e0e0;
+    --bg: #ffffff;
+    --accent: #2c5f7c;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--dark);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* Navigation */
+  nav {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--mid);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--black);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 140px 0 120px;
+  }
+
+  .hero h1 {
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--black);
+    margin-bottom: 40px;
+    max-width: 800px;
+  }
+
+  .hero h1 .accent {
+    color: var(--accent);
+  }
+
+  .hero .lead {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--mid);
+    max-width: 680px;
+    font-weight: 400;
+  }
+
+  /* Sections */
+  section {
+    padding: 100px 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .section-number {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .section-number .num {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .section-number .label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--light);
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.018em;
+    color: var(--black);
+    margin-bottom: 64px;
+    max-width: 720px;
+  }
+
+  /* Capabilities */
+  .capabilities {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .capability {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .capability-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--accent);
+    margin-top: 4px;
+  }
+
+  .capability-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 1.25;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .capability h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 14px;
+    letter-spacing: -0.008em;
+  }
+
+  .capability p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--mid);
+    max-width: 680px;
+  }
+
+  /* Outcomes */
+  .outcomes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .outcome {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    align-items: start;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .outcome:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .outcome .marker {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    padding-top: 4px;
+  }
+
+  .outcome h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 12px;
+    letter-spacing: -0.005em;
+  }
+
+  .outcome p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--mid);
+    max-width: 720px;
+  }
+
+  /* About */
+  .about-content {
+    max-width: 760px;
+  }
+
+  .about-content p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--mid);
+    margin-bottom: 24px;
+  }
+
+  .about-content p strong {
+    color: var(--black);
+    font-weight: 500;
+  }
+
+  .meta-block {
+    margin-top: 48px;
+    padding-top: 36px;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .meta-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 32px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .meta-row:last-child {
+    border-bottom: none;
+  }
+
+  .meta-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--light);
+    font-weight: 500;
+    padding-top: 2px;
+  }
+
+  .meta-value {
+    font-size: 15px;
+    color: var(--dark);
+    line-height: 1.7;
+  }
+
+  .meta-value strong {
+    color: var(--black);
+    font-weight: 500;
+  }
+
+  /* Contact */
+  .contact {
+    padding: 120px 0 140px;
+  }
+
+  .contact-lead {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--mid);
+    margin-bottom: 56px;
+    max-width: 640px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 520px;
+  }
+
+  .contact-row {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--accent);
+  }
+
+  .contact-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .contact-value a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .contact-value a:hover {
+    color: var(--accent);
+  }
+
+  .contact-value span {
+    color: var(--dark);
+    font-size: 16px;
+  }
+
+  /* Footer */
+  footer {
+    padding: 36px 0;
+    border-top: 1px solid var(--hairline);
+    font-size: 13px;
+    color: var(--light);
+  }
+
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .container { padding: 0 28px; }
+    .hero { padding: 80px 0 70px; }
+    .hero h1 { font-size: 36px; }
+    .hero .lead { font-size: 17px; }
+    section { padding: 70px 0; }
+    .section-title { font-size: 26px; margin-bottom: 44px; }
+    .capabilities { gap: 48px; }
+    .capability { grid-template-columns: 32px 1fr; gap: 20px; }
+    .outcome { grid-template-columns: 40px 1fr; gap: 16px; padding-bottom: 36px; }
+    .outcomes { gap: 36px; }
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 13px; }
+    .meta-row { grid-template-columns: 1fr; gap: 6px; }
+    .meta-label { padding-top: 0; }
+    .contact { padding: 80px 0 100px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="#" class="logo">Ontwerp Consulting &amp; Co.</a>
+    <ul class="nav-links">
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#outcomes">Outcomes</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Enterprise architecture, digital transformation, and <span class="accent">programme governance</span> for public sector and regulated industries.</h1>
+    <p class="lead">We partner with boards, executives, and government leadership to translate strategy into delivered outcomes. This involves designing target-state architectures, building investment business cases, and governing complex programmes to completion.</p>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="container">
+    <div class="section-number">
+      <span class="num">01</span>
+      <span class="label">Capabilities</span>
+    </div>
+    <h2 class="section-title">Three practice areas, anchored to delivery.</h2>
+
+    <div class="capabilities">
+      <div class="capability">
+        <div class="capability-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6M9 12h.01M15 12h.01M12 9h.01"/></svg>
+        </div>
+        <div>
+          <h3>Enterprise &amp; Solution Architecture</h3>
+          <p>Current-state assessment through to target-state design and implementation roadmaps. Microsoft full-stack programmes (D365, Power Platform, Azure, M365, Fabric) and platform-aware architecture across proprietary and open-source environments, aligned to evolving data sovereignty requirements.</p>
+        </div>
+      </div>
+
+      <div class="capability">
+        <div class="capability-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div>
+          <h3>Programme Governance &amp; Delivery</h3>
+          <p>Business case development for investments up to A$1.5B. Multi-workstream programme governance, vendor and contract management, and operating model design across complex, multi-vendor environments. Teams up to 160.</p>
+        </div>
+      </div>
+
+      <div class="capability">
+        <div class="capability-icon">
+          <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg>
+        </div>
+        <div>
+          <h3>Data Governance, Analytics &amp; AI</h3>
+          <p>Enterprise data governance and certification, information architecture, and master data management. Power BI and Fabric analytics platforms. Generative AI deployment using Claude, Microsoft Copilot, and Gemini, which includes RAG pipelines, agent-based workflows, and agentic AI architectures in regulated environments.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="outcomes">
+  <div class="container">
+    <div class="section-number">
+      <span class="num">02</span>
+      <span class="label">Selected outcomes</span>
+    </div>
+    <h2 class="section-title">Delivered at scale, across government and regulated environments.</h2>
+
+    <div class="outcomes">
+      <div class="outcome">
+        <div class="marker">01</div>
+        <div>
+          <h4>National Electronic Health Record, Australian Government</h4>
+          <p>Business Architect on the A$1.2B business case for Australia's national electronic health record programme. Approved at federal level following inter-jurisdictional consultations across six states, two territories, and the federal government.</p>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <div class="marker">02</div>
+        <div>
+          <h4>Sovereign Wealth Fund Data Governance</h4>
+          <p>Led mobilisation of the enterprise data governance framework for Australia's A$220B sovereign wealth fund. The programme covered data consumption, certification, operations, and reporting across the investment portfolio.</p>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <div class="marker">03</div>
+        <div>
+          <h4>National Payments System Transformation</h4>
+          <p>Senior Engagement Manager at Accenture (Australia, Switzerland). Led end-to-end delivery of a A$350M+ payments system transformation across federal agencies, including AUSTRAC, Customs and Border Protection, and Social Services.</p>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <div class="marker">04</div>
+        <div>
+          <h4>Municipal Government Digital Transformation</h4>
+          <p>Currently embedded as strategic technology partner with a Victorian local council, leading enterprise architecture, ERP, and data management across eight workstreams. Investment business case voted through by council; programme now in execution.</p>
+        </div>
+      </div>
+
+      <div class="outcome">
+        <div class="marker">05</div>
+        <div>
+          <h4>Global Not-for-Profit Technology Audit</h4>
+          <p>Led a A$6M technology audit assessing digital transformation readiness for one of the world's largest humanitarian organisations across 40+ countries. Delivered a prioritised investment roadmap and global data visualisation framework.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-number">
+      <span class="num">03</span>
+      <span class="label">About</span>
+    </div>
+    <h2 class="section-title">Independent practice. Senior consulting depth. Engineering foundation.</h2>
+
+    <div class="about-content">
+      <p>Ontwerp Consulting &amp; Co. is the independent practice of <strong>Imon Choudhury</strong>, Principal Consultant in enterprise architecture, digital transformation, and programme governance.</p>
+
+      <p>The trajectory runs from semiconductor design and systems engineering, through an MBA at AGSM @ UNSW with exchange at the Rotman School of Management (University of Toronto), to senior consulting roles at Accenture (Australia and Switzerland), the Australian Department of Health, the Future Fund, and a series of engagements across government, financial services, healthcare, and infrastructure.</p>
+
+      <p>Every engagement starts with the client's specific context. We build with you, not at you.</p>
+
+      <div class="meta-block">
+        <div class="meta-row">
+          <div class="meta-label">Sectors</div>
+          <div class="meta-value">Government &middot; Health &middot; Financial Services &middot; Investments &amp; Superannuation &middot; Insurance &middot; Not-for-Profit &middot; Fintech &middot; Manufacturing</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-label">Credentials</div>
+          <div class="meta-value">PMP<sup>&reg;</sup> &middot; CPEng IntPE (MIEAust) &middot; Lean Six Sigma Black Belt &middot; CSM<sup>&reg;</sup> <em>(TOGAF, ITIL, ITSM)</em></div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-label">Compliance frameworks</div>
+          <div class="meta-value">ISO 27001 &middot; NIST &middot; GDPR &middot; Privacy Act / APP &middot; ASD Essential Eight &middot; ASD ISM &middot; PCI DSS &middot; SOC 2 &middot; AML/CTF</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-label">Education</div>
+          <div class="meta-value">MBA (AGSM @ UNSW + Rotman, University of Toronto) &middot; BE (1st Class Distinction)</div>
+        </div>
+        <div class="meta-row">
+          <div class="meta-label">Clearance</div>
+          <div class="meta-value">NV1 (Australian Government)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-number">
+      <span class="num">04</span>
+      <span class="label">Contact</span>
+    </div>
+    <h2 class="section-title">Open to exploratory conversations.</h2>
+    <p class="contact-lead">On enterprise architecture, public sector digital transformation, data governance, or AI adoption in regulated environments.</p>
+
+    <div class="contact-grid">
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </div>
+        <div class="contact-value">
+          <a href="mailto:imon.choudhury@ontwerpc.com">imon.choudhury@ontwerpc.com</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v8M8 7v.01M12 18v-5M16 18v-3a2 2 0 00-4 0"/></svg>
+        </div>
+        <div class="contact-value">
+          <a href="https://linkedin.com/in/imonchoudhury" target="_blank" rel="noopener">linkedin.com/in/imonchoudhury</a>
+        </div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s-8-7.5-8-13a8 8 0 1116 0c0 5.5-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
+        </div>
+        <div class="contact-value">
+          <span>Melbourne, Australia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>&copy; Ontwerp Consulting &amp; Co.</div>
+    <div>Independent practice &middot; Australia</div>
+  </div>
+</footer>
+
+</body>
+</html>
